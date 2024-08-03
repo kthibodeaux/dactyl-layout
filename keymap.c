@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-#include "kthibodeaux.h"
+#include "custom/tapdance.h"
 
 enum layers {
   _BASE
