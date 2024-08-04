@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "custom/homerow_modifiers.h"
 #include "custom/i3.h"
+#include "custom/macros.h"
 #include "custom/tapdance.h"
 
 enum layers {
@@ -22,14 +23,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*                                    _______, _______,     _______, _______*/
   /*)*/
   [BASE] = LAYOUT_5x6(
-    _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, TG(GAME),
+    S_INTL,  _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, TG(GAME),
     KC_DEL,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSLS,
     _______, MY_A,    MY_R,    KC_S,    MY_T,    KC_D,        KC_H,    MY_N,    KC_E,    MY_I,    MY_O,    _______,
     _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, _______,
                       _______, _______,                                         _______, _______,
-                                        MO(NUM), MY_SPC,      KC_ENT,  _______,
+                                        MO(NUM), MY_SPC,      KC_ENT,  MO(SYMB),
                                         KC_BSPC, _______,     _______, KC_TAB,
                                         KC_ESC,  _______,     _______, _______
+  ),
+  [SYMB] = LAYOUT_5x6(
+    KC_F11,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F12,
+    _______, _______, S_TILD,  KC_LCBR, KC_RCBR, KC_DLR,      KC_MUTE, KC_LPRN, KC_RPRN, KC_ASTR, _______, _______,
+    _______, KC_AMPR, KC_PIPE, S_SQTE,  S_DQTE,  S_TICK,      KC_VOLU, KC_COLN, KC_AT,   KC_MINS, KC_HASH, _______,
+    _______, _______, KC_PERC, KC_PLUS, KC_EQL,  S_CART,      KC_VOLD, KC_LBRC, KC_RBRC, _______, _______, _______,
+                      _______, _______,                                         _______, _______,
+                                        _______, KC_LEFT,     _______, _______,
+                                        KC_RGHT, _______,     _______, _______,
+                                        _______, _______,     _______, _______
   ),
   [NUM] = LAYOUT_5x6(
     _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
