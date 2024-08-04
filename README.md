@@ -1,8 +1,5 @@
 # My Dactyl Manuform configuration.
 
-## Special
-* Space tap dances to _
-
 ## Building
 
 ```
