@@ -1,13 +1,14 @@
 #include QMK_KEYBOARD_H
-#include "custom/homerow_modifiers.h"
 #include "custom/i3.h"
 #include "custom/macros.h"
+#include "custom/modifiers.h"
 #include "custom/tapdance.h"
 
 enum layers {
   BASE,
   SYMB,
   NUM,
+  TMUX,
   GAME
 };
 
@@ -25,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_5x6(
     S_INTL,  _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, TG(GAME),
     KC_DEL,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSLS,
-    _______, MY_A,    MY_R,    KC_S,    MY_T,    KC_D,        KC_H,    MY_N,    KC_E,    MY_I,    MY_O,    _______,
+    _______, MY_A,    MY_R,    KC_S,    MY_T,    KC_D,        KC_H,    MY_N,    MY_E,    MY_I,    MY_O,    _______,
     _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, _______,
                       _______, _______,                                         _______, _______,
                                         MO(NUM), MY_SPC,      KC_ENT,  MO(SYMB),
@@ -50,6 +51,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       _______, _______,                                         _______, _______,
                                         _______, _______,     KC_UP,   _______,
                                         _______, _______,     _______, KC_DOWN,
+                                        _______, _______,     _______, _______
+  ),
+  [TMUX] = LAYOUT_5x6(
+    _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, T_JN_V,  T_JN_H,  _______,     _______, _______, _______, _______, _______, _______,
+    _______, T_1,     T_2,     T_3,     T_4,     T_5,         _______, T_CPYM,  _______, T_SP,    T_VS,    _______,
+    _______, T_6,     T_7,     T_8,     TRM_PST, T_BRKP,      _______, _______, _______, _______, _______, _______,
+                      _______, _______,                                         _______, _______,
+                                        _______, T_NEW,       T_FNGR,  _______,
+                                        T_ZOOM,  _______,     _______, _______,
                                         _______, _______,     _______, _______
   ),
   [GAME] = LAYOUT_5x6(
