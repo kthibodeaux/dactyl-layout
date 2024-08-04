@@ -23,7 +23,9 @@ enum {
   T_JN_V,
   T_JN_H,
   T_BRKP,
-  T_FNGR
+  T_FNGR,
+  E_THMUP,
+  E_JOY
 };
 
 void toggle_intl(keyrecord_t *record) {
@@ -94,6 +96,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case T_JN_H: do_tmux_key(record, KC_S, KC_LSFT); break;
     case T_BRKP: do_tmux_key(record, KC_B, KC_LSFT); break;
     case T_FNGR: do_tmux_key(record, KC_F, KC_LSFT); break;
+    case E_THMUP: if (record->event.pressed) { SEND_STRING(":+1:"); } break;
+    case E_JOY: if (record->event.pressed) { SEND_STRING(":joy:"); } break;
   }
 
   return true;

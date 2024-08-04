@@ -26,8 +26,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_5x6(
     S_INTL,  _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, TG(GAME),
     KC_DEL,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSLS,
-    _______, MY_A,    MY_R,    KC_S,    MY_T,    KC_D,        KC_H,    MY_N,    MY_E,    MY_I,    MY_O,    _______,
-    _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, _______,
+    _______, MY_A,    MY_R,    KC_S,    MY_T,    KC_D,        KC_H,    MY_N,    MY_E,    MY_I,    MY_O,    E_THMUP,
+    _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, E_JOY,
                       _______, _______,                                         _______, _______,
                                         MO(NUM), MY_SPC,      KC_ENT,  MO(SYMB),
                                         KC_BSPC, _______,     _______, KC_TAB,
